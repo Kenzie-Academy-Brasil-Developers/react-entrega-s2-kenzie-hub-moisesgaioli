@@ -1,10 +1,11 @@
-import { TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import "./styles.css"
 
 
 const FormTech = () => {
@@ -35,38 +36,38 @@ const FormTech = () => {
 
     return (
         <>
-            <div>
-                <h3> Adicionar tecnologia </h3>
+            <h3 className="title-tech"> Adicionar tecnologia </h3>
+            <div className="register-container"> 
+                <form className="form-tech" onSubmit={handleSubmit(createTechs)}>
+                    <div>
+                        <TextField 
+                            label="Nome da tecnologia"
+                            margin="normal"
+                            variant="outlined"
+                            size="medium"
+                            color="secondary"
+                            {...register("title")}
+                            error={!!errors.title}
+                            helperText={errors.title?.message}
+                        />
+                    </div>
+                    <div>
+                        <TextField 
+                            label="Nível"
+                            margin="normal"
+                            variant="outlined"
+                            size="medium"
+                            color="secondary"
+                            {...register("status")}
+                            error={!!errors.status}
+                            helperText={errors.status?.message}
+                        />
+                    </div>
+                    <div>
+                    <Button variant="contained" type="submit" color="secondary"> Cadastrar </Button>
+                    </div>
+                </form>
             </div>
-            <form onSubmit={handleSubmit(createTechs)}>
-                <div>
-                    <TextField 
-                        label="Nome da tecnologia"
-                        margin="normal"
-                        variant="outlined"
-                        size="medium"
-                        color="secondary"
-                        {...register("title")}
-                        error={!!errors.title}
-                        helperText={errors.title?.message}
-                    />
-                </div>
-                <div>
-                    <TextField 
-                        label="Nível"
-                        margin="normal"
-                        variant="outlined"
-                        size="medium"
-                        color="secondary"
-                        {...register("status")}
-                        error={!!errors.status}
-                        helperText={errors.status?.message}
-                    />
-                </div>
-                <div>
-                    <button type="submit"> Adicionar tecnologia </button>
-                </div>
-            </form>
         </>
     )
 }

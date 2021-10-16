@@ -1,7 +1,9 @@
+import { Button } from "@material-ui/core";
 import { useState } from "react";
 import { Redirect, useHistory } from "react-router";
 import AddTechs from "../../components/AddTechs";
 import FormTech from "../../components/FormTech";
+import "./styles.css"
 
 const Dashboard = ({ authenticated, setAuthenticated }) => {
 
@@ -24,10 +26,13 @@ const Dashboard = ({ authenticated, setAuthenticated }) => {
     return (
 
         <div>
-            <h1> Olá, {user.name} </h1>
+            <h1 className="title"> Olá, {user.name} </h1>
+            <div className="btn-logout">
+                <Button variant="contained" color="error" onClick={logout} > Sair </Button>
+            </div>
             <FormTech />
             <AddTechs />
-            <button onClick={logout} > Sair </button>
+           
         </div>
     )
 }

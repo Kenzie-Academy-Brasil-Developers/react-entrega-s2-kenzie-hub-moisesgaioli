@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import Cards from "../Cards"
 
-
 const AddTechs = () => {
 
     const [token] = useState(
@@ -37,7 +36,7 @@ const AddTechs = () => {
     }
 
     return (
-        <div>
+        <div className="card-container">
             {
                 user.techs?.map((item, index) => {
                     return <div key={index}>

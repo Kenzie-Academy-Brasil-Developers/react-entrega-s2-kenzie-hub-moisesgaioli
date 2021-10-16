@@ -1,12 +1,15 @@
-
+import { Button } from "@material-ui/core";
+import "./styles.css"
 
 const Cards = ({ item, deleteTech }) => {
     return (
-        <>  
-            <h3> {item.title} </h3>
-            <p> {item.status} </p>
-            <button onClick={() => deleteTech(item.id)} > Remover </button>
-        </>
+        
+        <div className="card">  
+            <h3 className="title-card"> {item.title} </h3>
+            <p className="text-card"> {item.status} </p>
+            <Button color="error" variant="outlined" onClick={() => deleteTech(item.id)} > Remover </Button>
+        </div>
+
     )
 }
 

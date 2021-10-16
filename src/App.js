@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify"
 
 function App() {
   return (
-    <div className="App">
+    <div className="main-container">
       <ToastContainer
         position="top-right"
         autoClose={5000}
