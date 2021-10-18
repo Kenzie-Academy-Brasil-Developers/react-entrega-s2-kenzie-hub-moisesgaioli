@@ -27,3 +27,19 @@ a {
 a:hover {
     border-bottom: 2px solid;
 }
+
+@media (min-width: 320px) and (max-width:768px) {
+    .title-home {
+        padding: 30px;
+        font-size: 4rem;
+    }
+
+    .link-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .link-home {
+        margin: 10px;
+    }
+}
